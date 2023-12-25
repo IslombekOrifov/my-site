@@ -34,7 +34,7 @@
                       <h1>Islombek Orifov</h1>
                       <p>{{ about.about_me }}</p>
                       <div class="home-buttons">
-                        <a href="{{ about.cv.url }}" class="btn btn-primary" download="{{ about.cv.url }}">Download CV</a>
+                        {% if about.cv %}<a href="{{ about.cv.url }}" class="btn btn-primary" download="{{ about.cv.url }}">Download CV</a>{% endif %}
                         <a href="tel:+998990001219" target="_self" class="btn btn-secondary">Call</a>
                       </div>
                     </div>
@@ -59,7 +59,7 @@
           <div class="row">
             <div class="col-12">
               <div class="info-list-w-icon d-flex">
-                {% for summary in summarys %} 
+                {% for summary in summaries %} 
                   <div class="info-block-w-icon col-6">
                     <div class="ci-icon">
                       <i class="linecons linecons-{{summary.icon}}"></i>
@@ -81,6 +81,7 @@
               <div class="p-20"></div>
 
               <!-- Testimonials -->
+              {% if quotes %}
               <div class="block-title">
                 <h2>Testimonials</h2>
               </div>
@@ -122,11 +123,13 @@
                   </div>
                 {% endfor %}
               </div>
+              {% endif %}
               <!-- /Testimonials -->
 
               <div class="p-40"></div>
 
               <!-- Clients Slider -->
+              {% if clients %}
               <div class="block-title">
                 <h2>Clients</h2>
               </div>
@@ -140,6 +143,7 @@
                   </div>
                 {% endfor %}
               </div>
+              {% endif %}
               <!-- /Clients Slider -->
 
               <div class="p-40"></div>
@@ -198,7 +202,7 @@
           <div class="p-40"></div>
 
           <!-- Pricing -->
-          <div class="row">
+          {% comment %} <div class="row">
             <div class=" col-xs-12 col-sm-12 ">
               <div class="block-title">
                 <h2>Pricing</h2>
@@ -279,7 +283,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
           <!-- /Pricing -->
         </div>
 

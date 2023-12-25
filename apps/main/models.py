@@ -21,7 +21,7 @@ class About(models.Model):
 
 class Summary(models.Model):
     theme = models.CharField(max_length=50)
-    body = models.CharField(max_length=50)
+    body = models.CharField(max_length=350)
     icon = models.CharField(max_length=50)
     
     def __str__(self) -> str:
